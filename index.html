@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Warming Awareness</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/P8CAPz/AbFqI/+BTBX/cUIS/3BCE/83bzf/SYVJ/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/P8BInlZ/xNRMf9XMAj/UywE/1IrA/9WLwb/LFws/zlrOf9CdUL/T5hP/wAAAAAAAAAAAAAAAAAAAAAAAAAAMkZD/w8+I/9SLwj/UisD/1QtBP9fNAn/c0EN/ziCev9AlIv/Q5eP/0STiv9KnZT/AAAAAAAAAAAAAAAAPFNR/xIxG/9TLAT/VCwE/181Cf97RQ3/oVcM/0jEuf9IxLn/S83C/0vOxP9KyL7/SLqx/02zq/8AAAAAAAAAABs2I/9VLgb/Bj8V/2U5DP+UUg7/x2kI/+Z2BP9P5tr/TuLW/0/k2P9O49f/TuLW/0zZzv9Jv7b/AAAAADZoRv8PKxf/BD0g/1g/F/+NTg//0G0I//R8Av/8gAH//oEA/0/m2v9P5tr/T+ba/0/m2f9O4tD/S89L/9R7If8yaGf/CioW/wNBI/8OZjP/sF8M/+t5BP/9gAD//4EA//+BAP//gQD/T+ZP/0/mT/9P5k///IAA/+x6Bv/Ech7/MmJQ/wopFP8ENBL/KV9Z/8RnCf/zfAL//4EA//+BAP9P5k//XtmD//+BAP//gQD//4EA//2AAP/oewj/Wqdx/0BcSP8bJx3/Gi4e/31HD//Lawn/9X0C//+BAP//gQD/T+ZP/17Zg/9e2YP/XtmD/2LXgP9d1oH/WcR5/1mkcP9ca1//ICwj/xozJv83XUH/yGsL//V9Av/+gQD//4EA//+BAP9e2YP/XtmD/17Zg/9e2YP/W9N//1a8df9Yn27/AAAAADA8M/8ZT0b/M1Is/7tmDv/wewT//YAA//+BAP//gQD//4EA/17Zg/9e2YP/XdiC/1rPff9SsG7/AAAAAAAAAABmZ2b/Oj08/0dKSf+gWxX/33UI//h+Av//gQD//4EA/17Zg///gQD//4EA//l/Av/idgf/vL+9/wAAAAAAAAAAAAAAAFxdXf9MTU3/hlQh/7toE//meAf/9n0C//p/Av/5fwL/938D//R/B//ofA7/yXMb/wAAAAAAAAAAAAAAAAAAAAAAAAAAt35D/4hgNv+VXyf/umoY/9l0Dv/ieAz/4HkP/9x6Fv/cfyD/3IYv/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAo3I//51mL/+ybin/x3kq/9SEMv/tlTv/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA+B8AAOAHAADAAwAAgAEAAIABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIABAACAAQAAwAMAAOAHAAD4HwAA//8AAA==" rel="icon" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <h1>Global Warming Awareness</h1>
+        <p>Helping Fight Climate Change</p>
+        <i>Created by Aydin Karmach and Timmy Totter</i>
+    </header>
+    <div class="container">
+        <section>
+            <h2>Why Global Warming Matters</h2>
+            <p>Global warming is a critical issue that affects the environment, ecosystems, and human well-being. It leads to rising temperatures, extreme weather events, and the loss of biodiversity. Taking action to combat global warming is essential for a sustainable future.</p>
+        </section>
+        
+        <section>
+            <h2>Get Involved</h2>
+            <p>You can make a difference in the fight against global warming:</p>
+            <ul>
+                <li>Reduce your carbon footprint</li>
+                <li>Support renewable energy initiatives</li>
+                <li>Advocate for sustainable policies</li>
+                <li>Educate others and raise awareness</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Temperature Trends</h2>
+            <p>Explore the global warming trends through the following line chart, which shows the global average temperature over the years:</p>
+
+            <!-- Line chart container -->
+            <div class="chart-container">
+                <canvas id="temperatureChart"></canvas>
+            </div>
+        </section>
+
+        <section>
+            <h2>CO2 Emissions</h2>
+            <p>View the distribution of CO2 emissions by source in the following doughnut chart:</p>
+
+            <!-- Doughnut chart container -->
+            <div class="chart-container">
+                <canvas style="width: 530px !important;height: 530px !important;"  id="co2EmissionsChart"></canvas>
+            </div>
+        </section>
+    </div>
+
+    <!-- Include Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        // Sample temperature data showing global warming trends (you can replace this with actual data)
+        const temperatureData = {
+            labels: ['2000', '2005', '2010', '2015', '2020', '2025'],
+            datasets: [{
+                label: 'Global Average Temperature (°C)',
+                data: [14.5, 14.7, 15.0, 15.3, 15.6, 16.0],
+                borderColor: '#FF5733', // Adjust the color to represent warming
+                backgroundColor: 'rgba(255, 87, 51, 0.2)',
+            }]
+        };
+
+        // Sample CO2 emissions data (you can replace this with actual data)
+        const co2EmissionsData = {
+            labels: ['Transportation', 'Industry', 'Energy', 'Agriculture', 'Other'],
+            datasets: [{
+                data: [30, 25, 20, 15, 10],
+                backgroundColor: ['#FF5733', '#009688', '#FFC107', '#03A9F4', '#8E24AA'],
+            }]
+        };
+
+        // Create a line chart for temperature trends
+        const temperatureCtx = document.getElementById('temperatureChart').getContext('2d');
+        const temperatureChart = new Chart(temperatureCtx, {
+            type: 'line',
+            data: temperatureData,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: false,
+                        title: {
+                            display: true,
+                            text: 'Temperature (°C)'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Year'
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top'
+                    }
+                }
+            }
+        });
+
+        // Create a doughnut chart for CO2 emissions
+        const co2EmissionsCtx = document.getElementById('co2EmissionsChart').getContext('2d');
+        const co2EmissionsChart = new Chart(co2EmissionsCtx, {
+            type: 'doughnut',
+            data: co2EmissionsData,
+            options: {
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'right'
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
