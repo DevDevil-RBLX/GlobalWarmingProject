@@ -1,69 +1,279 @@
- /* Reset some default styles */
- body, h1, h2, p, ul {
-    margin: 0;
-    padding: 0;
+/* Reset some default styles */
+body,
+h1,
+h2,
+p,
+ul {
+  margin: 0;
+  padding: 0;
 }
 
 /* Basic styling for the entire page */
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f2f2f2;
-    margin: 0;
-    padding: 0;
+  font-family: "Roboto", sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
 }
 
 /* Header styles */
 header {
-    background-color: #009688;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
+  background-color: #009688;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  box-shadow: 0px -14px 35px black;
 }
 
 h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+#donut {
+  width: 80%;
+  height: 100%;
 }
 
 /* Content container */
 .container {
-    max-width: 1000px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Chart containers */
 .chart-container {
-    width: 100%;
-    max-width: 800px;
-    margin: 20px auto;
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
 }
 
 .chart-container:first-child {
-    margin-top: 0;
+  margin-top: 0;
 }
 
 /* Styling for sections */
 h2 {
-    font-size: 24px;
-    margin-top: 20px;
-    color: #009688;
+  font-size: 24px;
+  margin-top: 20px;
+  color: #009688;
 }
 
 p {
-    font-size: 18px;
-    line-height: 1.6;
-    margin-bottom: 20px;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
 }
 
 ul {
-    list-style-type: disc;
-    padding-left: 20px;
+  list-style-type: disc;
+  padding-left: 20px;
 }
 
 li {
-    padding: 2.6px;
+  padding: 2.6px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.container2 {
+  margin-top: 22%;
+  margin-left: 40%;
+  width: 800px;
+  max-width: 830px; /*used to be 700px*/
+  min-height: 400px;
+  background: #fff;
+  transform: translate(-50%, -50%);
+  border-radius: 5px;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.25);
+}
+
+/* HEADER */
+
+.survey-header {
+  min-height: 50px;
+  border-bottom: 1px solid #ddd;
+  padding: 15px 20px 10px 20px;
+  display: flex;
+  align-items: center;
+}
+
+.survey-num {
+  font-weight: bold;
+  font-size: 15px;
+  font-size: 18px;
+  margin-right: 8px;
+}
+
+.survey-question {
+  font-size: 18px;
+}
+
+/* BODY */
+
+.choices {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.question-row {
+  margin-bottom: 15px;
+}
+
+.label {
+  display: flex;
+}
+
+.label input[type="checkbox"] {
+  vertical-align: sub;
+  margin-right: 10px;
+  align-self: center;
+}
+
+/* FOOTER */
+
+.survey-footer {
+  padding: 20px;
+  padding-top: 0;
+}
+
+.nav-button {
+  padding: 3px 12px;
+  border-radius: 5px;
+  border: none;
+  background: #fff;
+  margin-left: 10px;
+  margin-top: -19px;
+  cursor: pointer;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+}
+
+/* TEST COMPLETE */
+
+h1.test-completed {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 50px;
+  font-weight: 400;
+}
+
+.tick {
+  position: relative;
+  display: block;
+  margin: 20px auto;
+  /* margin-top: 30px; */
+  border: 1px solid green;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.tick::before {
+  content: "";
+  position: absolute;
+  top: 16%;
+  left: 35%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 32px;
+  border-style: solid;
+  border-color: green;
+  border-width: 0 4px 4px 0;
+  transform: rotate(45deg);
+}
+
+.results-info {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#quizname {
+  height: 2em;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+table {
+  border-collapse: collapse;
+  width: 649px;
+  height: 130px;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.25);
+}
+
+table,
+th,
+td {
+  border: 1px solid;
+  padding: 10px;
+}
+
+.donation-box {
+  max-width: 430px;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  padding: 50px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.donation-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.donation-amount select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.custom-amount {
+  display: none;
+}
+
+.donor-info label,
+.custom-amount label {
+  display: block;
+  margin-top: 10px;
+}
+
+.donor-info input,
+.custom-amount input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.donation-button button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.donation-button button:hover {
+  background-color: #0056b3;
+}
+
+#subscribe-button {
 }
